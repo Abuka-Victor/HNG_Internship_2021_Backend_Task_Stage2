@@ -42,7 +42,7 @@ a {
 }
 
 #details{
-    width: 40%;
+    width: 49%;
     display: inline-block;
     text-align: end;
 }
@@ -67,7 +67,7 @@ ul {
 img {
     display: block;
     margin: 50px auto 50px auto;
-    max-width: 400px;
+    width: 50%;
 }
 .nav {
     background-color: rgb(139, 63, 139);

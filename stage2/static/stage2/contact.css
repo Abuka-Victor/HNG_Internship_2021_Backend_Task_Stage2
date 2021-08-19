@@ -57,7 +57,7 @@ a {
 img {
     display: block;
     margin: 50px auto 50px auto;
-    max-width: 400px;
+    width: 50%;
 }
 .nav {
     background-color: rgb(139, 63, 139);
@@ -90,7 +90,7 @@ label {
 }
 
 .form-wrap {
-    width: 400px;
+    max-width: 400px;
     margin: 40px auto 20px auto;
     text-align: left;
     font-weight: bold;
@@ -123,4 +123,6 @@ button:hover {
 }
 textarea {
     padding: 8px;
+    width: 100%;
+    border-radius: 2px;
 }
