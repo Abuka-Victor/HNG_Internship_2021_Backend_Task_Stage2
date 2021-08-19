@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'stage2/contact.css' %}">
+    <title>Contact Me</title>
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li><a href="{% url 'stage2:index' %}">Home</a></li>
+            <li><a class="active" href="#">Contact</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <div id="head">
+            <div id="name">
+                <h1 id="first_name">CONTACT</h1>
+                <h1>ME</h1>
+            </div>
+        </div>
+        <div id="main">
+            <div class="content">
+                <h2>Details</h2>
+                <hr />
+                <div class="content-body">
+                    <p>Lagos, Nigeria</p>
+                    <p>+234 808 600 2239</p>
+                    <p>abukavictoro@gmail.com</p>
+                </div>
+            </div>
+            <div class="content">
+                <h2>Send Me a Message Now</h2>
+                <hr />
+                <div class="form-wrap">
+                    {% if name %}
+                        <br />
+                        <br />
+                        <h1>Thank you {{ name }} for your message. I will respond to you shortly.</h1>
+                        {% else %}
+                    <form action="{% url 'stage2:contact' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="form-content">
+                            <label for="namespace">Name</label>
+                            <input type="text" id="namespace" name="name" placeholder="Enter your first and last name"/>
+                        </div>
+                        <div class="form-content">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name ="subject" placeholder="Enter the email subject"/>
+                        </div>
+                        <div class="form-content">
+                            <label for="contact">Your Contact</label>
+                            <input type="text" id="contact" name="contact" placeholder="Enter your email or phone number"/>
+                        </div>
+                        <div class="form-content">
+                            <label for="message">Message</label>
+                            <textarea name="message" id="message" name="message" cols="52" rows="10" placeholder="Drop a message for me here"></textarea>
+                            <!-- <input type="text" id="message" /> -->
+                        </div>
+                        <button>Submit</button>
+                    </form>
+                    {% endif %}
+                </div>
+                    <img src="https://hng.tech/img/brand-logo.png" alt="zuri logo">
+                </div>
+            </div>
+        </div>
+</body>
+</html>
